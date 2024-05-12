@@ -1,5 +1,5 @@
 import random
-from Creature import Creature  # Assuming Creature class is defined in "Creature.py"
+from Creature import Creature  
 
 
 class Environment:
@@ -45,7 +45,6 @@ class Environment:
                 elif direction == 3:  # Left
                     new_pos_x = pos_x - 1
 
-                # Check if the new position is within bounds
                 if 0 <= new_pos_x < self.width and 0 <= new_pos_y < self.height:
                     creature.set_position(new_pos_x, new_pos_y)
 
@@ -57,7 +56,6 @@ class Environment:
             if reaction == 2:
                 creature.set_direction((direction - 1) % 4)
 
-            # Train the creature after updating its position
             creature.train()
 
         # Spawn new food item if needed

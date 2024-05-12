@@ -1,16 +1,15 @@
-# Import necessary modules and classes
 import random
 from Environment import Environment
 from Creature import Creature
 from EnvironmentVisualization import EnvironmentVisualization
 import time
-# Define parameters for the environment
+
 width = 100
 height = 100
 food_count = 5
 
 
-# Create the environment
+
 env = Environment(width, height, food_count)
 vis = EnvironmentVisualization(1000, 1000)
 creature = Creature()

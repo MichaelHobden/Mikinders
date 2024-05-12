@@ -32,7 +32,6 @@ class Environment:
             visual_data = self.get_visual_data(creature_position, direction)
             reaction = creature.get_action(visual_data)
 
-            # Move forward
             print(reaction)
             if reaction == 1:
                 new_pos_y, new_pos_x = None, None
@@ -58,8 +57,7 @@ class Environment:
 
             creature.train()
 
-        # Spawn new food item if needed
-        if random.random() < 1:
+        if random.random() < 0.1:
             self.add_food()
 
     def get_visual_data(self, creature_position, direction):

@@ -25,7 +25,7 @@ class Creature:
     def get_action(self, visual_data):
         input_data = self.process_input(visual_data)
         input_data = np.expand_dims(
-            input_data, axis=0)  # Add a batch dimension
+            input_data, axis=0)  
         predictions = self.model.predict(input_data)
         action = np.argmax(predictions)
         return action
@@ -42,7 +42,7 @@ class Creature:
             y_train = np.array(actions)
             print(X_train.shape)
             self.model.fit(X_train, y_train, epochs=1, verbose=0)
-            self.training_buffer = []  # Clear the training buffer after training
+            self.training_buffer = [] 
 
     def add_to_training_buffer(self, state, action):
         self.training_buffer.append((state, action))
